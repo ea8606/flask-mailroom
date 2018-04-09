@@ -1,0 +1,13 @@
+{% extends 'base.jinja2' %}
+
+{% block subtitle %}Donations for Alice{% endblock subtitle %}
+
+{% block content %}
+<ul>
+    {% for donation in donations %}
+    {% if donation.donor.name == 'Alice' %}
+        <li><b>{{ donation.donor.name }}</b>: {{ donation.value }}</li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endblock content %}
